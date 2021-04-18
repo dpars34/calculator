@@ -131,7 +131,6 @@ class App extends React.Component {
           <Button display="0" value="0" onClick={this.handleClick}/>
           <Button display="" value="" />
           <Button display="" value="" />
-          <Button display="" value="" />
         </div>
       </div>
     )

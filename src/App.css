@@ -2,7 +2,7 @@
 
 .container {
   margin: 3rem;
-  max-width: 20rem;
+  max-width: 15rem;
   background-color: rgb(110, 12, 12);
   padding: 2rem;
   font-family: Roboto, arial;
@@ -22,4 +22,8 @@
   margin: 0.3rem;
   border: none;
   background-color: orange;
+}
+
+.button:hover {
+  background-color: rgb(255, 188, 62);
 }

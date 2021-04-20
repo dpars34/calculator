@@ -39,7 +39,15 @@ class App extends React.Component {
       }
 
       //TODO Imagine typing 10 + 20, then pressing + again, the number 30 should appear and the calculator should be ready to add another number
-      
+      // This is bascially the same as hitting equals, except the symbol value will be updated
+      if (this.state.firstNumberExists && !this.state.secondNumberExists) {
+        const answer = this.calculate(this.state.firstNumber, this.state.secondNumber, this.state.symbol)
+        this.setState({
+          secondNumberExists: true,
+          currentNumber: answer,
+          symbol: value
+        })
+      }
     }
 
     // Was the equals button pressed?
@@ -52,7 +60,8 @@ class App extends React.Component {
           currentNumber: answer
         })
       }
-
+      
+      // This runs if the equals is pressed and only the first number is in memory
       else {
         const answer = this.calculate(this.state.firstNumber, this.state.secondNumber, this.state.symbol)
         this.setState({
@@ -121,6 +130,8 @@ class App extends React.Component {
       return firstNum
     }
   }
+
+  // Recalculate function will to subsequent calculations, doesn't need to parse to float
 
   render() {
     return(
